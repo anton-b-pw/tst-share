@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Test Page</</title>
+</head>
+<body>
+    <script>
+    let ls = window.parent.document.getElementsByTagName("legend");
+    let to_delete = [];
+    for (i = 0; i < ls.length; i++) {
+        if (ls.item(i).textContent.startsWith("__")) {
+            to_delete.push(ls.item(i).parentNode.parentNode);
+        }
+    }
+    for (let elem of to_delete) {
+        elem.parentNode.removeChild(elem);
+    }
+    </script>
+</body>
+</html>
